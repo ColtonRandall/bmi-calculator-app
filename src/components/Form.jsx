@@ -1,43 +1,50 @@
 import React, { useState } from "react";
 
-const weightLabel = "Weight (in kg)";
-const heightLabel = "Height (in cm)";
+function EnterWeight() {
+  // useState
+  const [weight, setWeight] = useState("");
+  const [height, setHeight] = useState("");
 
-export default function EnterWeight() {
-  const [weight, setWeight] = useState("0");
-  const [height, setHeight] = useState("0");
+  const weightLabel = "Weight (in kg)";
+  const heightLabel = "Height (in cm)";
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("BMI details submitted");
+  };
 
   return (
     //Main div
     <div className="formContainer">
       {/* Input fields */}
-      <div className="inputFields">
-        {/* Weight input */}
-        <div>
-          <div className="weightInput">
-            {weightLabel}
-            <form>
-              <input type="text" value={weight} />
-            </form>
-          </div>
-        </div>
-        {/* Height input */}
-        <div>
-          <div className="heightInput">
-            {heightLabel}
-            <form>
-              <input type="text" value={height} />
-            </form>
-          </div>
-        </div>
+      <div className="inputs">
+        <form onSubmit={handleSubmit}>
+          {weightLabel}
+          <input
+            className="weightInput "
+            type="number"
+            placeholder={weight}
+            value={weight}
+            onChange={(e) => setWeight(e.target.value)}
+          />
+          {heightLabel}
+          <input
+            className="heightInput "
+            type="text"
+            placeholder={height}
+            value={height}
+            onChange={(e) => setHeight(e.target.value)}
+          />
+          <input
+            className="calculate-bmi-button"
+            type="submit"
+            value="Calculate BMI"
+          />
+        </form>
       </div>
-
-      {/* Submit Button */}
-      <input
-        className="calculate-bmi-button"
-        type="submit"
-        value="Calculate BMI"
-      />
+      <h3 className="output">The weight you entered: {weight}</h3>
+      <h3 className="output">The height you entered: {height}</h3>
     </div>
   );
 }
+export default EnterWeight;

@@ -1,16 +1,16 @@
+* {
+  border: white 1px solid;
+}
+
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-* {
-  border: white 1px solid;
-}
-
 body {
   margin: 0;
-  background: #0c2d48;
+  background-color: #172b4d;
   color: white;
 }
 
@@ -34,4 +34,10 @@ body {
 .weightInput,
 .heightInput {
   margin: 2rem;
+}
+
+.output {
+  background-color: blue;
+  text-align: center;
+  border-radius: 5px;
 }
