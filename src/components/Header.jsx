@@ -1,7 +1,7 @@
 import React from "react";
 
-const headerText = "BMI Calculator";
+const headerText = "BMI Tracker";
 
-export default function renderHeader() {
-  return <div>{headerText}</div>;
+export default function RenderHeader() {
+  return <h1 className="header">{headerText}</h1>;
 }

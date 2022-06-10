@@ -1,0 +1,37 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  border: white 1px solid;
+}
+
+body {
+  margin: 0;
+  background: #0c2d48;
+  color: white;
+}
+
+.app {
+  display: grid;
+  justify-content: center;
+}
+
+.header {
+  text-align: center;
+}
+
+.formContainer {
+  text-align: center;
+}
+
+.inputFields {
+  display: flex;
+}
+
+.weightInput,
+.heightInput {
+  margin: 2rem;
+}
